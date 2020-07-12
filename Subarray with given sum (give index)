@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n,s;
+	    cin>>n>>s;
+	    int arr[n];
+	    for(int i=0;i<n;i++)
+	    {
+	        cin>>arr[i];
+	    }
+	    int cs=arr[0],start=0,f=0,i;
+	    for(i=1;i<=n;i++)
+	    {
+	        while(cs>s && start<i-1)
+	        {
+	            cs-=arr[start];
+	            start++;
+	        }
+	        if(cs==s)
+	        {
+	            f=1;
+	            break;
+	        }
+	        else
+	        {
+	            cs+=arr[i];
+	        }
+	    }
+	    if(f)
+	    {
+	    cout<<start+1<<" "<<i<<endl;
+	    }
+	    else
+	    {
+	        cout<<-1<<endl;
+	    }
+	}
+	return 0;
+}
