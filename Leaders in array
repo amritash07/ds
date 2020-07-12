@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    int arr[n];
+	    for(int i=0;i<n;i++)
+	    {
+	        cin>>arr[i];
+	    }
+	    int m=arr[n-1];
+	    vector<int>v;
+	    v.push_back(m);
+	    for(int i=n-2;i>=0;i--)
+	    {
+	        int t=arr[i];
+	        if(m<=t)
+	        {
+	            v.push_back(t);
+	            m=t;
+	        }
+	    }
+	    reverse(v.begin(),v.end());
+	    for(auto i:v)
+	    {
+	        cout<<i<<" ";
+	    }
+	    cout<<endl;
+	    
+	}
+	return 0;
+}
