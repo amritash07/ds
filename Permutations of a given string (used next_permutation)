@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    string a;
+	    cin>>a;
+	    sort(a.begin(),a.end());
+	    cout<<a<<" ";
+	    while(next_permutation(a.begin(),a.end()))
+	    {
+	        cout<<a<<" ";
+	    }
+	    cout<<endl;
+	}
+	return 0;
+}
